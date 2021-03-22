@@ -33,3 +33,5 @@ jobs:
         with:
           name: release-app
           path: app/build/outputs/apk/release/app-release-unsigned.apk
+      - name: Run testing python file
+        run: python3 test.py
