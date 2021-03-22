@@ -22,7 +22,7 @@ jobs:
       - name: Build debug with Gradle
         run: ./gradlew clean :app:assembledebug
       - name: Build release with Gradle
-        run: ./gradlew :app:asseblerelease
+        run: ./gradlew :app:assemblerelease
       - name: Upload APK
         uses: actions/upload-artifact@v1
         with:
