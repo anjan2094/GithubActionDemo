@@ -17,21 +17,5 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      - name: Build debug with Gradle
-        run: ./gradlew clean :app:assembledebug
-      - name: Upload Debug APK
-        uses: actions/upload-artifact@v1
-        with:
-          name: debug-app
-          path: app/build/outputs/apk/debug/app-debug.apk
-      - name: Build release with Gradle
-        run: ./gradlew :app:assemblerelease
-      - name: Upload Release APK
-        uses: actions/upload-artifact@v1
-        with:
-          name: release-app
-          path: app/build/outputs/apk/release/app-release-unsigned.apk
       - name: Run testing python file
         run: python3 test.py
