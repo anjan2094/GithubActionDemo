@@ -11,7 +11,7 @@ import subprocess
 
 #file_link = sys.argv[1]
 #file_name = sys.argv[2]
-TEMPLATE_ID = sys.argv[1]
+# TEMPLATE_ID = sys.argv[1]
 
 def upload_to_blackblaze(file_link, file_name):
     try:
