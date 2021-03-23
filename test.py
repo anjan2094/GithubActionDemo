@@ -169,10 +169,13 @@ def generateAndroidBuild(campaignName):
 
 
 def ApkLink(VERSION_NAME, campaign):
+    VERSION_NAME = VERSION_NAME.encode('ascii', 'ignore')
+    campaign = campaign.encode('ascii', 'ignore')
     print("Version apk : " + VERSION_NAME)
     print("Campaign apk : " + campaign)
     try:
         return "https://f002.backblazeb2.com/file/nostrapro/NostragamusPro-" + VERSION_NAME + "-" + campaign + ".apk"
+                
     except:
         print("Error in ApkLink")
         e = sys.exc_info()[0]
