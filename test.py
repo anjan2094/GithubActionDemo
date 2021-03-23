@@ -159,6 +159,7 @@ def generateAndroidBuild(campaignName):
         os.system(""" ./gradlew clean :app:assembledebug """)
         os.system(""" mkdir -p ./final_builds """)
         os.system(""" mv app/build/outputs/apk/debug/*.apk ./final_builds/ """)
+        os.system(""" git add final_builds/* """)
         return
     except:
         print("Error in generateAndroidBuild")
