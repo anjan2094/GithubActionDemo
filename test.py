@@ -188,17 +188,17 @@ def main():
     campaignName = "searchmoney"
     FlockSend("Started generating build for Campaign = " + campaignName)
     output_files = generateAndroidBuild(campaignName)
-    file_name = "NostragamusPro-" + VERSION_NAME + "-" + campaignName + ".apk"
-    file_link = "./final_builds/" + file_name
+    # file_name = "NostragamusPro-" + VERSION_NAME + "-" + campaignName + ".apk"
+    # file_link = "./final_builds/" + file_name
     # upload_to_blackblaze(file_link, file_name)
     print("Output File = " + output_files)
     # updateCampaignApk(campaignName, VERSION_CODE, ApkLink(VERSION_NAME, campaignName))
-    FlockSend("Updated Apk for Campaign = " + campaignName + " -- " + ApkLink(VERSION_NAME, campaignName))
-    print("LOOP OVER")
+    # FlockSend("Updated Apk for Campaign = " + campaignName + " -- " + ApkLink(VERSION_NAME, campaignName))
+    # print("LOOP OVER")
 
     # for campaign_names in allCampaignDict:
-    cName = "searchmoney"
-    print("Download link = " + ApkLink(VERSION_NAME, cName))
+    # cName = "searchmoney"
+    # print("Download link = " + ApkLink(VERSION_NAME, cName))
 
 
 if __name__ == '__main__':
