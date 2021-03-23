@@ -173,7 +173,7 @@ def ApkLink(VERSION_NAME, campaign):
     print(VERSION_NAME)
     print("Campaign apk : " + campaign)
     try:
-        return ("https://f002.backblazeb2.com/file/nostrapro/NostragamusPro-" + VERSION_NAME + "-" + campaign + ".apk").encode()
+        return ("https://f002.backblazeb2.com/file/nostrapro/NostragamusPro-" + VERSION_NAME + "-" + campaign + ".apk").decode()
                 
     except:
         print("Error in ApkLink")
