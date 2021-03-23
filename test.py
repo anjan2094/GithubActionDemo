@@ -169,7 +169,6 @@ def generateAndroidBuild(campaignName):
 
 
 def ApkLink(VERSION_NAME, campaign):
-    campaign = campaign.decode('ascii', 'ignore')
     print("Version Name : ")
     print(VERSION_NAME)
     print("Campaign apk : " + campaign)
