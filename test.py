@@ -169,6 +169,8 @@ def generateAndroidBuild(campaignName):
 
 
 def ApkLink(VERSION_NAME, campaign):
+    print("Version apk : " + VERSION_NAME)
+    print("Campaign apk : " + campaign)
     try:
         return "https://f002.backblazeb2.com/file/nostrapro/NostragamusPro-" + VERSION_NAME + "-" + campaign + ".apk"
     except:
