@@ -3,7 +3,7 @@
 import sys
 import base64
 import json
-import urllib2
+import urllib.request
 import hashlib
 import requests
 import os
@@ -24,11 +24,11 @@ def upload_to_blackblaze(file_link, file_name):
         basic_auth_string = 'Basic ' + base64.b64encode(id_and_key)
         headers = { 'Authorization': basic_auth_string }
 
-        request = urllib2.Request(
+        request = urllib.request.Request(
             'https://api.backblazeb2.com/b2api/v2/b2_authorize_account',
             headers = headers
             )
-        response = urllib2.urlopen(request)
+        response = urllib.request.urlopen(request)
         response_data = json.loads(response.read())
         response.close()
         #print(response_data)
@@ -36,12 +36,12 @@ def upload_to_blackblaze(file_link, file_name):
 
         api_url = 'https://api002.backblazeb2.com/b2api/v2/b2_get_upload_url'
         bucket_id = '985bbf9ebcfbe08c7b37031d'
-        request2 = urllib2.Request(
+        request2 = urllib.request.Request(
             api_url,
             json.dumps({ 'bucketId' : bucket_id }),
             headers = { 'Authorization': account_authorization_token }
             )
-        response = urllib2.urlopen(request2)
+        response = urllib.request.urlopen(request2)
         response_data = json.loads(response.read())
         #print(response_data)
         upload_url = response_data['uploadUrl']
