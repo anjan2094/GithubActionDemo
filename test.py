@@ -191,7 +191,7 @@ def main():
     # file_name = "NostragamusPro-" + VERSION_NAME + "-" + campaignName + ".apk"
     # file_link = "./final_builds/" + file_name
     # upload_to_blackblaze(file_link, file_name)
-    print("Output File = " + output_files)
+    print(output_files)
     # updateCampaignApk(campaignName, VERSION_CODE, ApkLink(VERSION_NAME, campaignName))
     # FlockSend("Updated Apk for Campaign = " + campaignName + " -- " + ApkLink(VERSION_NAME, campaignName))
     # print("LOOP OVER")
