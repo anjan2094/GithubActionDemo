@@ -156,9 +156,9 @@ def generateAndroidBuild(campaignName):
     try:
 
         changeVersionProperties("CAMPAIGN_NAME", campaignName)
-        os.system(""" ./gradlew clean :app:assembleNostragamusProRelease """)
+        os.system(""" ./gradlew clean :app:assembledebug """)
         os.system(""" mkdir -p ./final_builds """)
-        os.system(""" mv ./app/build/outputs/apk/NostragamusPro/release/*.apk ./final_builds/ """)
+        os.system(""" mv app/build/outputs/apk/debug/*.apk ./final_builds/ """)
         return
     except:
         print("Error in generateAndroidBuild")
