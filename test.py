@@ -203,7 +203,8 @@ def main():
 
     # for campaign_names in allCampaignDict:
     cName = "searchmoney"
-    print("Download link : " + ApkLink(VERSION_NAME, cName))
+    print("Download link : ")
+    print(ApkLink(VERSION_NAME, cName))
 
 
 if __name__ == '__main__':
