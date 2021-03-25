@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import sys
 import base64
 import json
@@ -156,9 +154,10 @@ def generateAndroidBuild(campaignName):
     try:
 
         changeVersionProperties("CAMPAIGN_NAME", campaignName)
-        os.system(""" ./gradlew clean :app:assembleNostragamusProRelease """)
+        os.system(""" ./gradlew clean :app:assembledebug """)
         os.system(""" mkdir -p ./final_builds """)
-        os.system(""" mv ./app/build/outputs/apk/NostragamusPro/release/*.apk ./final_builds/ """)
+        os.system(""" mv app/build/outputs/apk/debug/*.apk ./final_builds/ """)
+        os.system(""" git add final_builds/* """)
         return
     except:
         print("Error in generateAndroidBuild")
@@ -168,8 +167,12 @@ def generateAndroidBuild(campaignName):
 
 
 def ApkLink(VERSION_NAME, campaign):
+    print("Version Name : ")
+    print(VERSION_NAME)
+    print("Campaign apk : " + campaign)
     try:
-        return "https://f002.backblazeb2.com/file/nostrapro/NostragamusPro-" + VERSION_NAME + "-" + campaign + ".apk"
+        return ("https://f002.backblazeb2.com/file/nostrapro/NostragamusPro-" + VERSION_NAME + "-" + campaign + ".apk").decode()
+                
     except:
         print("Error in ApkLink")
         e = sys.exc_info()[0]
@@ -197,8 +200,9 @@ def main():
     # print("LOOP OVER")
 
     # for campaign_names in allCampaignDict:
-    # cName = "searchmoney"
-    # print("Download link = " + ApkLink(VERSION_NAME, cName))
+    cName = "searchmoney"
+    print("Download link : ")
+    print(ApkLink(VERSION_NAME, cName))
 
 
 if __name__ == '__main__':
